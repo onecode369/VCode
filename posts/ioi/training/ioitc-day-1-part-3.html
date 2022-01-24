@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>IOI Training Camp Day - 1 Part - 1 : VCode</title>
+        <title>IOI Training Camp Day - 1 Part - 2 : VCode</title>
         <link rel="icon" type="image/x-icon" href="https://onecode369.github.io/assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
@@ -51,9 +51,9 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="post-heading">
-                            <h1>IOITC DAY-1 PART-1</h1>
+                            <h1>IOITC DAY-1 PART-3</h1>
                             <span class="meta">
-                                Posted on Jan 23, 2022
+                                Posted on Jan 25, 2022
                             </span>
                         </div>
                     </div>
@@ -65,8 +65,8 @@
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
-						<p>
-							Let us start with a problem
+                    	<p style="text-align: justify;">
+							Let's increase problem level further.
 						</p>
 
 						<br/>
@@ -78,90 +78,79 @@
 						<br/>
 
 						<p style="text-align: justify;">
-							Given a list of integers <b>L = [A<sub>1</sub>, A<sub>2</sub>, A<sub>3</sub>, …, A<sub>N</sub>]</b>. Where <b>A<sub>i</sub> ≥ 0</b> , <b>0 ≤ i ≤ N</b>. You have to find shortest contiguous segment in the list which adds up to a given integer <b>K</b>. If there are more than one such segments, print one of them.
+							Given a grid of integers <b>L = [[A<sub>1,1</sub>, A<sub>1,2</sub>, A<sub>1,3</sub>, ..., A<sub>1,M</sub>], [A<sub>2,1</sub>, A<sub>2,1</sub>, A<sub>2,3</sub>, ..., A<sub>2,M</sub>], [A<sub>3,1</sub>, A<sub>3,2</sub>, A<sub>3,3</sub>, ..., A<sub>3,M</sub>], [..., ..., ..., ..., ...], [A<sub>N,1</sub>, A<sub>N,2</sub>, A<sub>N,3</sub>, ..., A<sub>N,M</sub>]]</b>. Where <b>A<sub>i,j</sub> ≥ 0</b> , <b>0 ≤ i ≤ N</b>, <b>0 ≤ j ≤ M</b>. You have to find least perimeter of rectangle which adds up to a given integer <b>K</b>.
 							<br/><br/>
 							For example, 
-							If  <b>L = [2, 1, 3, 1, 4, 4, 1, 8, 1, 7]</b> and <b>K = 9</b> , The answer would be <b>{6, 7}</b>.
+							If  <b>L = [[1, 0, 0, 0, 0], [0, 0, 0, 0, 0], [1, 0, 1, 1, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 2], [1, 0, 0, 0, 0]]</b> and <b>K = 3</b> , The answer would be <b>22</b>, rectangles will be <b>{(0, 0), (2, 2)}</b> and <b>{(2, 3), (4, 4)}</b>.
 						</p>
 
 						<br/>
 
 						<h2 class="text-danger">
-							By Naive Approach
+							Problem : Garden, 2005
 						</h2>
 
 						<br/>
 
 						<p style="text-align: justify;">
-							Find every possible segments and sum up elements present in it. This will have <b>O(n<sup>2</sup>)</b> time complexity.
+							Question summary:<br/><br/>
+							A rose garden in rectangular form is <b>l</b> meters long and <b>w</b> meters wide. We have to fence two rectangular fence inside the garden such that both are disjoint and sum of their perimeter is minimal. So, we have to just output sum of perimeter of those rectangles.
 						</p>
+
+						<br/>
+
+						<h2 class="text-danger">
+							Solution
+						</h2>
 
 						<br/>
 							
-						<script src="https://gist.github.com/onecode369/915cff6f2bd368c7ca37b305c37bde37.js"></script>
+						<script src="https://gist.github.com/onecode369/9eae13302c77bd7dd55e3cf160f6cb57.js"></script>
 
 						<br/>
 
-						<p style="text-align: justify;">
-							Can we do better ?
-						</p>
+                        <p style="text-align: justify;">
+                            Let's make problem even more intresting.
+                        </p>
 
-						<br/>
+                        <br/>
 
-						<h2 class="text-danger">
-							By Prefix Sum
-						</h2>
+                        <h2 class="text-danger">
+                            Problem
+                        </h2>
 
-						<br/>
+                        <br/>
 
-						<p style="text-align: justify;">
-							Compute the prefix sum of array <b>L</b> into another array <b>prefixL</b> (make sure to add an extra element "0" before the list) , for every index <b>i</b> in <b>prefixL</b>, search if an element exist with value <b>prefixL[i] + K</b> and return the indices of the segment with minimum length. We can search for element with help of Binary Search, which will take <b>O(log(n))</b> time. So, overall it will have <b>O(n·log(n))</b> time complexity. 
-						</p>
+                        <p style="text-align: justify;">
+                            Given a list of integers <b>L = [A<sub>1</sub>, A<sub>2</sub>, A<sub>3</sub>, …, A<sub>N</sub>]</b>. Where <b>A<sub>i</sub> ≥ 0</b> , <b>0 ≤ i ≤ N</b>. You have to find pair of shortest disjoint contiguous segment in the list each adding up to a given integer <b>K</b> and sum of size of segment is minimum. If there are more than one such pair of segments, print one of such pair.
+                            <br/><br/>
+                            For example,
+                            If  <b>L = [2, 1, 3, 1, 4, 4, 1, 8, 1, 7]</b> and <b>K = 9</b> , The answer would be <b>{{3, 5}, {6, 7}}</b>
+                        </p>
 
-						<br/>
+                        <br/>
 
-						<script src="https://gist.github.com/onecode369/424ad7bc4c5b1816e6b9365e94f29389.js"></script>
+                        <h2 class="text-danger">
+                            Solution
+                        </h2>
 
-						<br/>
+                        <br/>
 
-						<p style="text-align: justify;">
-							Can we still do better ?
-						</p>
+                        <p style="text-align: justify;">
+                            Note that pairs of segments have to be disjoint. So, we can't simply say that the segments with least size will be the answer. Even in the given example <b>{6, 7}</b> and <b>{7, 8}</b> are two least size segments, but they have a common index which doesn't follow the condtition of being disjoint. Then, what should we do?<br/><br/>
+                            Let us take an index <b>i</b>, for each i we will find the least size segment in range <b>[0, i]</b> and <b>(i, N)</b>. Doing this will ensure that the segments are disjoint. As far as searching segment in the ranges are concerned, we can find them by applying sliding window algorithm from both the sides.  
+                        </p>
 
-						<br/>
+                        <br/>
 
-						<h2 class="text-danger">
-							By Sliding Window Algorithm
-						</h2>
+                        <script src="https://gist.github.com/onecode369/fa59b2a20bf4d829fe585b8a478dc4ef.js"></script>
 
-						<br/>
+                        <br/>
 
-						<p style="text-align: justify;">
-							As the name suggest, we will use two vectors <b>i</b> and <b>j</b> to point at starting and ending element of the segment respectively. If the current sum of the segment is less than <b>K</b> then increase the index <b>j</b> and include the element in the sum. If the current sum of the segment is greater than K then increase the index <b>i</b> and exclude the from the sum. When the current segment sum is equal to <b>K</b>, store the indices if the segment length is less than the previous one. As the array is iterated once, So, time complexity will be <b>O(n)</b>. 
-						</p>
-
-						<br/>
-
-						<script src="https://gist.github.com/onecode369/8da5b15542c00028be9d868de4a4dfe9.js"></script>
-
-						<br/>
-
-						<p style="text-align: justify;">
-							<b>Note:</b> Some conditions have been added to ensure that <b>i ≤ j</b> and <b>j < n</b>.
-						</p>
-
-						<br/>
-
-						<p style="text-align: justify;">
-							What if the numbers can also be negative?
-						</p>
-
-						<br/>
-
-						<div style="width: 100%; display: inline-block;">
-							<div style="float: left;"><a href=""></a></div>
-							<div style="float: right;"><a href="https://onecode369.github.io/posts/ioi/training/ioitc-day-1-part-2.html">Next ></a></div>
-						</div>
+                        <div style="width: 100%; display: inline-block;">
+                            <div style="float: left;"><a href="https://onecode369.github.io/posts/ioi/training/ioitc-day-1-part-2.html">< Prev</a></div>
+                            <div style="float: right;"><a href=""></a></div>
+                        </div>
 
 						<br/>
                     </div>
