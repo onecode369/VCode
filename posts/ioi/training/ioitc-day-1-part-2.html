@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>IOI Training Camp Day - 1 Part - 1 : VCode</title>
+        <title>IOI Training Camp Day - 1 Part - 2 : VCode</title>
         <link rel="icon" type="image/x-icon" href="https://onecode369.github.io/assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="post-heading">
-                            <h1>IOITC DAY-1 PART-1</h1>
+                            <h1>IOITC DAY-1 PART-2</h1>
                             <span class="meta">
                                 Posted on Jan 24, 2022
                             </span>
@@ -65,8 +65,9 @@
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
-						<p>
-							Let us start with a problem
+                    	<p>
+							So, What if the numbers can also be negative? <br/><br/>
+							We can't use sliding window algorithm then. First of all we will compute prefix sum and then sort it with their respective index (sort them as <b>{prefixL[i],i}</b>).Then we will apply binary search on it for every index <b>i</b> to look for element whose index <b>j</b> is greater than index <b>i</b> and whose value is equal to <b>prefixL[i] + K</b>. This will take <b>O(n·log(n))</b> time.
 						</p>
 
 						<br/>
@@ -78,90 +79,23 @@
 						<br/>
 
 						<p>
-							Given a list of integers <b>L = [A1, A2, A3, …, AN]</b>. Where <b>Ai ≥ 0</b> , <b>0 ≤ i ≤ N</b>. You have find indices of shortest contiguous segment in the list which adds up to a given integer <b>K</b>. If there are more than one such segments, print one of them.
+							Given a list of integers <b>L = [A1, A2, A3, …, AN]</b>. Where <b>Ai ∈ I</b> , <b>0 ≤ i ≤ N</b>. You have find indices of shortest contiguous segment in the list which adds up to a given integer <b>K</b>. If there are more than one such segments, print one of them.
 							<br/><br/>
 							For example, 
-							If  <b>L = [2, 1, 3, 1, 4, 4, 1, 8, 1, 7]</b> and <b>K = 9</b> , The answer would be <b>{6, 7}</b>
+							If  <b>L = [2, 1, 10, 1, 3, -4, -2, 20, 5, 5, 5, 1, 1]</b> and <b>K = 17</b> , The answer would be <b>{4, 7}</b>
 						</p>
 
 						<br/>
 
 						<h2 class="text-danger">
-							<u>By Naive Approach:</u>
+							<u>Code:</u>
 						</h2>
-
-						<br/>
-
-						<p>
-							Find every possible segments and sum elements in it. This will have <b>O(n<sup>2</sup>)</b> time complexity.
-						</p>
 
 						<br/>
 							
-						<script src="https://gist.github.com/onecode369/915cff6f2bd368c7ca37b305c37bde37.js"></script>
+						<script src="https://gist.github.com/onecode369/9eae13302c77bd7dd55e3cf160f6cb57.js"></script>
 
 						<br/>
-
-						<p>
-							Can we do better ?
-						</p>
-
-						<br/>
-
-						<h2 class="text-danger">
-							<u>By Prefix Sum:</u>
-						</h2>
-
-						<br/>
-
-						<p>
-							Compute the prefix sum of array <b>L</b> into another array <b>prefixL</b> (make sure to add an extra element with value 0 before the list) , for every index <b>i</b> in <b>prefixL</b>, search if an element exist with value <b>prefixL[i] + K</b> and return the indices of the segment with minimum length. We can search for element with help of Binary Search, which will take <b>O(log(n))</b> time. So, overall it will have <b>O(n·log(n))</b> time complexity. 
-						</p>
-
-						<br/>
-
-						<script src="https://gist.github.com/onecode369/424ad7bc4c5b1816e6b9365e94f29389.js"></script>
-
-						<br/>
-
-						<p>
-							Can we still do better ?
-						</p>
-
-						<br/>
-
-						<h2 class="text-danger">
-							<u>By Sliding Window Algorithm:</u>
-						</h2>
-
-						<br/>
-
-						<p>
-							As the name suggest, we will use two vectors <b>i</b> and <b>j</b> to point at starting and ending element of the segment respectively. If the current sum of the segment is less than <b>K</b> then increase the index <b>j</b> and include the element in the sum. If the current sum of the segment is greater than K then increase the index <b>i</b> and exclude the from the sum. When the current segment sum is equal to <b>K</b>, store the indices if the segment length is less than the previous one. As the array is iterated once, So, time complexity will be <b>O(n)</b>. 
-						</p>
-
-						<br/>
-
-						<script src="https://gist.github.com/onecode369/8da5b15542c00028be9d868de4a4dfe9.js"></script>
-
-						<br/>
-
-						<p>
-							<b>Note:</b> Some conditions have been added to ensure that <b>i ≤ j</b> and <b>j < n</b>.
-						</p>
-
-						<br/>
-
-						<p>
-							What if the numbers can also be negative?
-						</p>
-
-						<br/>
-
-						<div style="width: 100%; display: inline-block;">
-							<div style="float: left;"><a href=""></a></div>
-							<div style="float: right;"><a href="https://vcode369.blogspot.com/2022/01/ioi-training-camp-day-1-part-2.html">Next ></a></div>
-						</div>
 
 						<br/>
                     </div>
