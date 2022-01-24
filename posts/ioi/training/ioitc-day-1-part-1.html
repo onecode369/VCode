@@ -19,28 +19,28 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="onecode369.github.io">VCode</a>
+                <a class="navbar-brand" href="https://onecode369.github.io">VCODE</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="onecode369.github.io">Home</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="onecode369.github.io/about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="https://onecode369.github.io">Home</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="https://onecode369.github.io/about.html">About</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link px-lg-3 py-3 py-lg-4 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             IOI
                             </a>
                             <ul class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="onecode369.github.io/posts/ioi/zonal">Zonal</a></li>
-                                <li><a class="dropdown-item" href="onecode369.github.io/posts/ioi/national">National</a></li>
-                                <li><a class="dropdown-item" href="onecode369.github.io/posts/ioi/training">Training</a></li>
-                                <li><a class="dropdown-item" href="onecode369.github.io/posts/ioi/international">International</a></li>
+                                <li><a class="dropdown-item" href="https://onecode369.github.io/posts/ioi/zonal">Zonal</a></li>
+                                <li><a class="dropdown-item" href="https://onecode369.github.io/posts/ioi/national">National</a></li>
+                                <li><a class="dropdown-item" href="https://onecode369.github.io/posts/ioi/training">Training</a></li>
+                                <li><a class="dropdown-item" href="https://onecode369.github.io/posts/ioi/international">International</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="onecode369.github.io/post.html">Sample Post</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="onecode369.github.io/contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="https://onecode369.github.io/post.html">Sample Post</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="https://onecode369.github.io/contact.html">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -72,13 +72,13 @@
 						<br/>
 
 						<h2 class="text-danger">
-							<u>Problem:</u>
+							Problem
 						</h2>
 
 						<br/>
 
-						<p>
-							Given a list of integers <b>L = [A1, A2, A3, …, AN]</b>. Where <b>Ai ≥ 0</b> , <b>0 ≤ i ≤ N</b>. You have find indices of shortest contiguous segment in the list which adds up to a given integer <b>K</b>. If there are more than one such segments, print one of them.
+						<p style="text-align: justify;">
+							Given a list of integers <b>L = [A<sub>1</sub>, A<sub>2</sub>, A<sub>3</sub>, …, A<sub>N</sub>]</b>. Where <b>A<sub>i</sub> ≥ 0</b> , <b>0 ≤ i ≤ N</b>. You have to find shortest contiguous segment in the list which adds up to a given integer <b>K</b>. If there are more than one such segments, print one of them.
 							<br/><br/>
 							For example, 
 							If  <b>L = [2, 1, 3, 1, 4, 4, 1, 8, 1, 7]</b> and <b>K = 9</b> , The answer would be <b>{6, 7}</b>
@@ -87,13 +87,13 @@
 						<br/>
 
 						<h2 class="text-danger">
-							<u>By Naive Approach:</u>
+							By Naive Approach
 						</h2>
 
 						<br/>
 
-						<p>
-							Find every possible segments and sum elements in it. This will have <b>O(n<sup>2</sup>)</b> time complexity.
+						<p style="text-align: justify;">
+							Find every possible segments and sum up elements present in it. This will have <b>O(n<sup>2</sup>)</b> time complexity.
 						</p>
 
 						<br/>
@@ -102,20 +102,20 @@
 
 						<br/>
 
-						<p>
+						<p style="text-align: justify;">
 							Can we do better ?
 						</p>
 
 						<br/>
 
 						<h2 class="text-danger">
-							<u>By Prefix Sum:</u>
+							By Prefix Sum
 						</h2>
 
 						<br/>
 
-						<p>
-							Compute the prefix sum of array <b>L</b> into another array <b>prefixL</b> (make sure to add an extra element with value 0 before the list) , for every index <b>i</b> in <b>prefixL</b>, search if an element exist with value <b>prefixL[i] + K</b> and return the indices of the segment with minimum length. We can search for element with help of Binary Search, which will take <b>O(log(n))</b> time. So, overall it will have <b>O(n·log(n))</b> time complexity. 
+						<p style="text-align: justify;">
+							Compute the prefix sum of array <b>L</b> into another array <b>prefixL</b> (make sure to add an extra element "0" before the list) , for every index <b>i</b> in <b>prefixL</b>, search if an element exist with value <b>prefixL[i] + K</b> and return the indices of the segment with minimum length. We can search for element with help of Binary Search, which will take <b>O(log(n))</b> time. So, overall it will have <b>O(n·log(n))</b> time complexity. 
 						</p>
 
 						<br/>
@@ -124,19 +124,19 @@
 
 						<br/>
 
-						<p>
+						<p style="text-align: justify;">
 							Can we still do better ?
 						</p>
 
 						<br/>
 
 						<h2 class="text-danger">
-							<u>By Sliding Window Algorithm:</u>
+							By Sliding Window Algorithm
 						</h2>
 
 						<br/>
 
-						<p>
+						<p style="text-align: justify;">
 							As the name suggest, we will use two vectors <b>i</b> and <b>j</b> to point at starting and ending element of the segment respectively. If the current sum of the segment is less than <b>K</b> then increase the index <b>j</b> and include the element in the sum. If the current sum of the segment is greater than K then increase the index <b>i</b> and exclude the from the sum. When the current segment sum is equal to <b>K</b>, store the indices if the segment length is less than the previous one. As the array is iterated once, So, time complexity will be <b>O(n)</b>. 
 						</p>
 
@@ -146,13 +146,13 @@
 
 						<br/>
 
-						<p>
+						<p style="text-align: justify;">
 							<b>Note:</b> Some conditions have been added to ensure that <b>i ≤ j</b> and <b>j < n</b>.
 						</p>
 
 						<br/>
 
-						<p>
+						<p style="text-align: justify;">
 							What if the numbers can also be negative?
 						</p>
 
