@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>IOI Training Camp Day - 1 Part - 2 : VCode</title>
+        <title>IOI Training Camp Day - 1 Part - 3 : VCode</title>
         <link rel="icon" type="image/x-icon" href="https://onecode369.github.io/assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
@@ -46,7 +46,6 @@
                                 <li><a class="dropdown-item" href="https://onecode369.github.io/posts/ioi/international">International</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="https://onecode369.github.io/post.html">Sample Post</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="https://onecode369.github.io/contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -160,7 +159,24 @@
 							A rose garden in rectangular form is <b>l</b> meters long and <b>w</b> meters wide. We have to fence two rectangular fence inside the garden such that both are disjoint and sum of their perimeter is minimal. So, we have to just output sum of perimeter of those rectangles.
 						</p>
 
+                        <br/>
+
+                        <h2 class="text-danger">
+                            Solution
+                        </h2>
+
+                        <br/>
+
+                        <p style="text-align: justify;">
+                            We will divide the rectangle vertically and find both side rectangle with minimum perimeter. Doing this will ensure that rectangles are disjoint. Repeat the process now by dividing rectangle horizontally. We have already discussed the process to find the rectangles with sum equals to <b>K</b>. So, how exactly we are going to find the minimium perimeter rectangle within the range?<br/><br/>
+                            To find minimum perimeter rectangle in the range, we will have to take four array, two of size <b>N</b> (for rows) and two of size <b>M</b> (for columns).
+                        </p>
+
 						<br/>
+                        
+                        <script src="https://gist.github.com/onecode369/571f6506848bc73cc421367fb2aa3c22.js"></script>
+                        
+                        <br/>
 
                         <div style="width: 100%; display: inline-block;">
                             <div style="float: left;"><a href="https://onecode369.github.io/posts/ioi/training/ioitc-day-1-part-2.html">< Prev</a></div>
