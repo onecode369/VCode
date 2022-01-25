@@ -100,7 +100,7 @@
 						<br/>
 
 						<p style="text-align: justify;">
-							Find every possible segments and sum up elements present in it. This will have <b>O(n<sup>2</sup>)</b> time complexity.
+							Find every possible segments and sum up elements present in it. This will have \(\cal{O}(n^2)\) time complexity.
 						</p>
 
 						<br/>
@@ -122,7 +122,7 @@
 						<br/>
 
 						<p style="text-align: justify;">
-							Compute the prefix sum of array <b>L</b> into another array <b>prefixL</b> (make sure to add an extra element "0" before the list) , for every index <b>i</b> in <b>prefixL</b>, search if an element exist with value <b>prefixL[i] + K</b> and return the indices of the segment with minimum length. We can search for element with help of Binary Search, which will take <b>O(log(n))</b> time. So, overall it will have <b>O(n·log(n))</b> time complexity. 
+							Compute the prefix sum of array <b>L</b> into another array <b>prefixL</b> (make sure to add an extra element "0" before the list) , for every index <b>i</b> in <b>prefixL</b>, search if an element exist with value <b>prefixL[i] + K</b> and return the indices of the segment with minimum length. We can search for element with help of Binary Search, which will take \(\cal{O}(\log(n))\) time. So, overall it will have \(\cal{O}(n \cdot \log(n))\) time complexity. 
 						</p>
 
 						<br/>
@@ -144,7 +144,7 @@
 						<br/>
 
 						<p style="text-align: justify;">
-							As the name suggest, we will use two vectors <b>i</b> and <b>j</b> to point at starting and ending element of the segment respectively. If the current sum of the segment is less than <b>K</b> then increase the index <b>j</b> and include the element in the sum. If the current sum of the segment is greater than K then increase the index <b>i</b> and exclude the from the sum. When the current segment sum is equal to <b>K</b>, store the indices if the segment length is less than the previous one. As the array is iterated once, So, time complexity will be <b>O(n)</b>. 
+							As the name suggest, we will use two vectors <b>i</b> and <b>j</b> to point at starting and ending element of the segment respectively. If the current sum of the segment is less than <b>K</b> then increase the index <b>j</b> and include the element in the sum. If the current sum of the segment is greater than K then increase the index <b>i</b> and exclude the from the sum. When the current segment sum is equal to <b>K</b>, store the indices if the segment length is less than the previous one. As the array is iterated once, So, time complexity will be \(\cal{O}(n)\). 
 						</p>
 
 						<br/>
